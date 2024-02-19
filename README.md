@@ -4,6 +4,7 @@
 
 |*TEMAS*|*DESCRIPCIÓN*|
 |--|--|
-|1- Html|Lenguaje de Etiquetas|
-|2- Css|Hoja de Estilos en Cascada|
-|3- JavaScript|Lenguaje de Programacion|
+|1- Emmet|Flujo de Trabajo|
+|2- CHTML|Editar etiquetas|
+|3- JavaScript|Hoja de estilos en Cascada|
+|4- JavaScript|Lenguaje de Programación|

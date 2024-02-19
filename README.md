@@ -7,4 +7,4 @@
 |1- Emmet|Flujo de Trabajo|
 |2- HTML|Lenguaje de Etiquetas|
 |3- CSS|Hoja de estilos en Cascada|
-|4- JavaScript|Lenguaje de Programación|
+|4- JavaScript|Lenguaje de Programación|  

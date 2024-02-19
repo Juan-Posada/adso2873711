@@ -5,6 +5,6 @@
 |*TEMAS*|*DESCRIPCIÓN*|
 |--|--|
 |1- Emmet|Flujo de Trabajo|
-|2- CHTML|Editar etiquetas|
-|3- JavaScript|Hoja de estilos en Cascada|
+|2- HTML|Editar etiquetas|
+|3- CSS|Hoja de estilos en Cascada|
 |4- JavaScript|Lenguaje de Programación|

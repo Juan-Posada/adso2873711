@@ -49,9 +49,9 @@ main {
             width: 280px;
             
             i {
-                background-color:hotpink;
+                background-color: #001117;
                 border-radius: 20px;
-                color: black;
+                color: whitesmoke;
                 font-style: normal;
                 display: flex;
                 align-items: center;

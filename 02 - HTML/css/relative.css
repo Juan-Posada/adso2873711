@@ -58,14 +58,14 @@ main {
     }
 }
 
-/* @media screen and (min-width: 570px) {
+ @media screen and (min-width: 570px) {
     header {
     flex-direction: column;
     a:is(:link, :visited){
         display: flex;
-        align-items: center;
-        width: 80%;
+        justify-content: center;
+        width: 98% !important;
 
+        }
     }
-}
-} */
+} 

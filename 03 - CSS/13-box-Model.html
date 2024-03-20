@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS File</title>
+    <title>Box Model</title>
     <link rel="stylesheet" href="css/master.css">
-    <link rel="stylesheet" href="css/cssfile.css">
+    <style>
+
+        div.caja1 {
+            height: 200px;
+            width: 300px;
+            background-color: rgba(10,107,126,.4);
+            border: 4px dashed #fff;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            margin: 20px auto;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <nav class="controls">
@@ -15,14 +30,16 @@
     </nav>
     <main>
         <header>
-            <h1>CSS FILE</h1>
+            <h1>BOX MODEL</h1>
             <h2>
-               De esta forma, puedes incluir CSS dE UN ARCHIVO EXTERNOStyle. Esto es muy útil, cuando se tienen muchos documentos .html
+              El modelo de caja es esecialmente lo que envuelve un elemento de html: Consiste en borde, relleno, contenido y márgen
             </h2>
         </header>
         <section>
-            <p class="title"> ADSO 2873711 </p>
-        </section>
+            <div class="caja1">
+                CAJA 📦
+            </div>
+       </section>
     </main>
 </body>
 </html>

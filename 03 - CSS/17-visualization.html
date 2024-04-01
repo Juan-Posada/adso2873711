@@ -34,20 +34,22 @@
         div.parent-box {
         display: flex;
         gap: 10px;
+        margin: 20px auto ;
         }
 
         div.box {
             border: 2px solid #0009;
             padding: 4px;
+            height: 500px;
         }
 
         section div.box p {
-            font-size: 0.6rem;
+            font-size: 0.8rem;
         }
 
         section div.box h4 {
-            font-size: 0.7rem;
-            color: #fff6;
+            font-size: 1rem;
+            color: #fff;
             padding: 4px;
             background-color: rgba(0,128,128, 0.7);
             text-align: center;
@@ -63,6 +65,44 @@
             overflow: scroll;
     
         }
+
+        div.element {
+            border: 2px solid #0009;
+            width: 200px;
+            height: 80px;
+            font-size: 4.4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        div.parent-element {
+        display: flex;
+        gap: 10px;
+        margin: 20px auto;
+        padding-bottom: 4rem;
+        }
+
+        div.element1 {
+            background-color: rgb(10, 36, 83);
+            left: 60px;
+            z-index: 1;
+        }
+        div.element2 {
+            background-color: rgb(37, 95, 221);
+            left: 0px;
+            top: 30px;
+            z-index: 2;
+        }
+        div.element3 {
+            background-color: rgb(54, 119, 156);
+            left: -60px;
+            top: 60px;
+            z-index: 3;
+        }
+
+
 
     </style>
 </head>
@@ -102,25 +142,34 @@
            <div class="child child6">6</div>
        </div>
        <h3>Overflow</h3>
+       <br>
        <div class="parent-box">
             <div class="box box1">
-                <h4>visible</h4>
+                <h4>Visible</h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti porro non necessitatibus distinctio facilis hic, officiis consequuntur incidunt libero, quia voluptas. Nemo quasi architecto, omnis odit eveniet alias minima vitae?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus veritatis quia voluptates hic officiis aspernatur cum dolores laudantium architecto iste a sunt vero nesciunt non dolore rerum aperiam deserunt quam, maxime ad tempora? Iste voluptas alias culpa eum, corporis id, sunt ullam obcaecati vel quod, possimus distinctio. Expedita, architecto quisquam.
                 </p>
             </div>
             <div class="box box2">
-                <h4>hidden</h4>
+                <h4>Hidden</h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse enim, recusandae debitis voluptatem aut aliquam at praesentium sequi placeat laboriosam magni dolorum veniam, repudiandae facere unde consectetur, atque nostrum? Vero.
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur nemo architecto itaque ratione facere quidem iure dolor tempora ipsum rem? Aspernatur facilis possimus dolorum ut numquam saepe, sapiente, eum nulla eveniet nihil expedita, distinctio quidem? Delectus iste voluptates veniam ea esse corporis tempora quibusdam labore. Ducimus quod porro exercitationem harum!
                 </p>
             </div>
             <div class="box box3">
-                <h4>scroll</h4>
+                <h4>Scroll</h4>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae blanditiis natus modi unde, maiores impedit aspernatur accusantium asperiores, ut corporis fugiat odio repellendus adipisci. Asperiores ullam omnis vel itaque provident!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis minus sed sapiente quidem tempora enim fugiat ea eaque provident rerum! Aperiam consectetur tempore deleniti aliquid voluptate iste, explicabo quae officiis, itaque distinctio nisi. Vero totam magni, earum omnis aperiam suscipit cumque explicabo soluta porro sint in. Magnam modi soluta consequuntur.
                 </p>
             </div>
+       </div>
+       <br><br>
+       <h3>Z-INDEX</h3>
+       <br>
+       <div class="parent-element">
+            <div class="element element1">1</div>
+            <div class="element element2">2</div>
+            <div class="element element3">3</div>
        </div>
        </section>
     </main>

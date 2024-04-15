@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lists</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        ul {
+            list-style-type: square;
+        }
+        ul ul {
+            list-style-type: circle;
+        }
+
+        ol {
+            list-style-type: upper-roman;
+        }
+
+        ol ol {
+            list-style-type: lower-greek;
+        }
+
+        ul.images {
+            list-style-type: url(images/goat.png);
+        }
+    </style>
+</head>
+<body>
+    <nav class="controls">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fafafa" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        </a>
+    </nav>
+    <main>
+        <header>
+          <h1>LISTS</h1>
+          <h2>Permite modificar todas las listas</h2>
+        </header>
+        <section>
+            <h3>Unordered List</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>
+                    JavaScript
+                    <ul>
+                        <li>React JS</li>
+                        <li>Vue JS</li>
+                        <li>Angular JS</li>
+                    </ul>
+                </li>
+            </ul>
+            <h3>Ordered List</h3>
+            <ol>
+                <li>
+                    Iron-Man
+                    <ol>
+                        <li>MARK-01</li>
+                        <li>MARK-55</li>
+                    </ol>
+                </li>
+                <li>
+                    Spider-Man
+                    <ol>
+                        <li>Peter Parker</li>
+                        <li>Miles Morales</li>
+                    </ol>
+                </li>
+                <li>Captain America</li>
+                <li>Hulk
+                    <ol>Bruce Banner</ol>
+                </li>
+            </ol>
+            <h3>Image List</h3>
+            <ul class="images">
+                <li>Michael Jordan</li>
+                <li>Lebron James</li>
+                <li>Kobe Bryant</li>
+                <li>Kareem Abdul-Jabbar</li>
+                <li>Stephen Curry</li>
+                <li>Larry Bird</li>
+                <li>Magic Jhonson</li>
+            </ul>
+       </section>
+    </main>
+</body>
+</html>

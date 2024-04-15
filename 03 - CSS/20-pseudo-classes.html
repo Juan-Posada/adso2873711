@@ -5,6 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pseudo-Classes</title>
     <link rel="stylesheet" href="css/master.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+        nav {
+            margin-block: 1rem;
+        }
+
+        nav a:is(:link, :visited) {
+            background-color: #0009;
+            color: beige;
+            padding: 0.4rem 0.8rem;
+            text-decoration: none;
+        }
+
+        nav a:is(:hover) {
+            background-color: #000;
+            color: #fff
+        }
+
+        nav a:is(:active) {
+            background-color: red;
+        }
+
+        nav a:is(:first-child, :last-child) {
+            background-color: #009;
+        }
+
+        input {
+            margin-block: 0.4rem;
+            padding: 0.4rem 0.8rem;
+            outline: none;
+        }
+
+        input:is(:focus) {
+            border: 2px solid #009;
+        }
+
+        p.paragraph:first-line {
+            background-color: #0094;
+        }
+
+        p.paragraph::first-letter {
+            font-family: Italianno;
+            font-size: 4rem;
+        }
+       
+        div.heart {
+            background-color: transparent;
+            position: relative;
+            margin-block: 1rem;
+            height: 100px;
+            width: 50px;
+        }
+
+        div.heart::before {
+            background-color: #c00;
+            border-radius: 25px 25px 0 0;
+            position: absolute;
+            content: "";
+            height: 80px;
+            width: 50px;
+            left: 100px;
+            transform-origin: center;
+            transform: rotate(-45deg) translate(20px);
+            top: 0;
+        }
+
+        div.heart::after {
+            background-color: #c00;
+            border-radius: 25px 25px 0 0;
+            position: absolute;
+            content: "";
+            height: 80px;
+            width: 50px;
+            left: 150px;
+            transform-origin: center;
+            transform: rotate(45deg) translate(-20px);
+            top: 0;
+        }
+
+    </style>
 </head>
 <body>
     <nav class="controls">
@@ -15,9 +95,27 @@
     <main>
         <header>
           <h1>PSEUDO CLASSES</h1>
+          <h2>Es usado para definir el estado especial de un elemento</h2>
         </header>
         <section>
-         
+            <h3>:link|:hover|:active|:visited</h3>
+            <h4>:first-child|:last-child</h4>
+        <nav>
+            <a href="#">Option1</a>
+            <a href="#">Option2</a>
+            <a href="#">Option3</a>
+            <a href="#">Option4</a>
+        </nav>
+        <h3>:focus</h3>
+        <input type="text" placeholder="Enter your First Name">
+        <br>
+        <input type="text" placeholder="Enter your Last Name">
+        <h3>:first-Letter|:first-Line</h3>
+        <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam quod voluptatum corrupti doloremque, odio temporibus</p>
+        <h3>:before|:after</h3>
+        <div class="heart"></div>
+       
+
        </section>
     </main>
 </body>

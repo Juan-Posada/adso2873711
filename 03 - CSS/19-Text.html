@@ -5,6 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text</title>
     <link rel="stylesheet" href="css/master.css">
+    <style>
+        .ta-left{text-align: left;}
+        .ta-center{text-align: center;}
+        .ta-right{text-align: right;}
+        .ta-justify{text-align: justify;}
+
+        .lh1-2rem{line-height: 2rem;}
+
+        .td-over{
+            text-decoration: overline;
+        }
+
+        .td-line{
+            text-decoration: line-through;
+        }
+
+        .td-under{
+            text-decoration: underline;
+        }
+
+        .td-all{
+            text-decoration: overline line-through underline ;
+        }
+
+        .tt-upper{
+            text-transform: uppercase;
+        }
+
+        .tt-lower{
+            text-transform: lowercase;
+        }
+
+        .tt-cap{
+            text-transform: capitalize;
+        }
+
+        .ti-2rem{
+            text-indent: 2rem;
+        }
+
+        .ti-4rem{
+            text-indent: 4rem;
+        }
+
+        .l-spacing {
+            letter-spacing: 1.5rem;
+        }
+
+        .w-spacing {
+            word-spacing: 2rem;
+        }
+
+    </style>
 </head>
 <body>
     <nav class="controls">
@@ -15,9 +68,46 @@
     <main>
         <header>
           <h1>TEXT</h1>
+          <ul>
+            <li>Aling</li>
+            <li>Line Height</li>
+            <li>Decoration</li>
+            <li>Transform</li>
+            <li>Text-Ident</li>
+            <li>Text-Spacing</li>
+         </ul>
         </header>
         <section>
-         
+        <h3>Text Align</h3>
+        <p class="ta-left">Left</p>
+        <p class="ta-center">Center</p>
+        <p class="ta-right">Right</p>
+        <p class="ta-justify">Justify Lorem ipsum dolor, sit amet consectetur adipisicing elit. Placeat quasi ratione minus iusto!</p>
+        <h3>Line Height</h3>
+        <p class="lh1-2rem">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt voluptates rem nostrum quidem velit quo accusantium id, distinctio iure cumque repudiandae eveniet laudantium consequuntur fuga asperiores voluptate vel voluptas ipsam.
+        </p>
+        <h3>Text Decoration</h3>
+        <p class="td-over">Lorem, ipsum dolor.</p>
+        <p class="td-line">Lorem, ipsum dolor.</p>
+        <p class="td-under">Lorem, ipsum dolor.</p>
+        <p class="td-all">Lorem, ipsum dolor.</p>
+        <h3>Transform</h3>
+        <h4>Uppercase</h4>
+        <p class="tt-upper">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, sint quod? Necessitatibus, ratione. Praesentium ipsa magni architecto voluptatem?</p>
+        <h4>Lowercase</h4>
+        <p class="tt-lower">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, sint quod? Necessitatibus, ratione. Praesentium ipsa magni architecto voluptatem?</p>
+        <h4>Capitalize</h4>
+        <p class="tt-cap">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur, sint quod? Necessitatibus, ratione. Praesentium ipsa magni architecto voluptatem?</p>
+        <h3>Text Indent</h3>
+        <p class="ti-2rem">Lorem ipsum dolor sit.</p>
+        <p class="ti-4rem">Lorem ipsum dolor sit.</p>
+        <h3>Spacing (Letters|Words)</h3>
+        <h4>Letters</h4>
+        <p class="l-spacing">Lorem ipsum dolor sit.</p>
+        <h4>Words</h4>
+        <p class="w-spacing">Lorem ipsum dolor sit.</p>
+
        </section>
     </main>
 </body>

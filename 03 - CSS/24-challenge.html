@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style>
+
+    body {
+        background-color: #17A053;
+        font-family: sans-serif;
+
+    nav {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        width: 100%;
+        margin: bottom 20px;
+
+    a {
+        background-color: rgba(12, 54, 7, 0.6);
+        display: flex;
+        color: #000;
+        gap: 1rem;
+        align-items: center;
+        padding: 1rem;
+        transition: all 0.5s ease-in;
+        width: 100px;
+        text-align: center;
+        justify-content: center;
+        text-decoration: none;
+        font-size: 1em;
+    }
+
+    a:is(:hover)  {
+        transform: translateY(-5px);
+        background-color: rgb(2, 34, 2);
+        color: azure;
+        text-align: center;
+        justify-content: center; 
+    }
+    }
+
+    div.sprite-img {
+        background: url(images/spriteweb.png);
+        background-position: -10px -400px;
+        margin: 0 auto;
+        height: 180px;
+        width: 190px;
+        }
+    }
+
+    main.superior {
+        background-color: rgba(12, 54, 7, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+
+    }
+
+    div.sprite1 {
+        background: url(images/spriteweb.png);
+        background-position: -500px -6px;
+        border: 3px solid #fff;
+        border-radius: 9px;
+        height: 200px;
+        width: 290px;
+        margin: 20px auto;
+    }
+    div.sprite2 {
+        background: url(images/spriteweb.png);
+        background-position: -500px -6px;
+        border: 3px solid #fff;
+        border-radius: 9px;
+        height: 200px;
+        width: 290px;
+        margin: 20px auto;
+    }
+    div.sprite3 {
+        background: url(images/spriteweb.png);
+        background-position: -500px -6px;
+        border: 3px solid #fff;
+        border-radius: 9px;
+        height: 200px;
+        width: 290px;
+        margin: 20px auto;
+    }
+
+    </style>
+
+</head>
+<body>
+    <main>
+        <div class="sprite-img"></div>
+        <nav>
+            <a href="">INICIO</a>
+            <a href="">NOSOTROS</a>
+            <a href="">PORTAFOLIO</a>
+            <a href="">SERVICIOS</a>
+            <a href="">CONTACTO</a>
+        </nav>
+        <main class="superior">
+            <div class="sprite1"></div>
+            <div class="sprite2"></div>
+            <div class="sprite3"></div>
+        </main>
+    </main>
+</body>
+</html>

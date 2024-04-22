@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>03 - CSS</title>
     <link rel="stylesheet" href="css/master.css">
+    <style>
+        div.menus {
+            display: flex;
+            gap: 1rem;
+        }
+
+        @media screen and (max-width: 580px00) {
+
+            div.menus {
+                flex-direction: column;
+            }
+        }
+
+    </style>
 </head>
 <body>
     <nav class="controls">
@@ -19,7 +33,9 @@
             <h2>---------------------------</h2>
             <h2>Es un lenguaje de hojas de estilos creado para contolar el aspecto en diferentes documentos</h2>
         </header>
+        <div class="menus">
         <menu>
+            <h3>Reference 2.1</h3>
             <a href="00-Template.html">
                 <i>00</i>
                 <span>Template</span>
@@ -122,6 +138,34 @@
                 <span>Challenge</span>
             </a>
         </menu>
+        <menu>
+            <h3>Reference 3</h3>
+            <a href="25-new-selectors.html" target="_blank">
+                <i>25</i>
+                <span>New Selectors</span>
+            </a>
+            <a href="26-border-radius.html" target="_blank">
+                <i>26</i>
+                <span>Border Radius</span>
+            </a>
+            <a href="27-box-shadows.html" target="_blank">
+                <i>27</i>
+                <span>Box Shadows</span>
+            </a>
+            <a href="28-challenge-shadows.html" target="_blank">
+                <i>28</i>
+                <span>Challenge Shadows</span>
+            </a>
+            <a href="29-new-backgrounds.html" target="_blank">
+                <i>29</i>
+                <span>New Backgrounds</span>
+            </a>
+            <a href="30-text-shadows.html" target="_blank">
+                <i>30</i>
+                <span>Text Shadows</span>
+            </a>
+        </menu>
+        </div>
     </main>
 </body>
 </html>

@@ -3,8 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>new-backgrounds</title>
     <link rel="stylesheet" href="css/master.css">
+    <style>
+        div.multiples {
+            border-radius: 10px;
+            border: 4px solid #fff5;
+            width: 320px;
+            height: 453px;
+            background: url(images/bg3.png),
+                        url(images/bg2.png),
+                        url(images/bg1.jpg);
+            margin-inline: auto;
+            margin-block: 1rem;
+          
+        }
+
+        section div {
+            border: 2px solid white;
+            border-radius: 5px;
+            height: 200px;
+            margin-inline: auto;
+            width: 380px;
+        }
+
+        div.gradient1 {
+            background: linear-gradient(to left, rgb(23, 121, 186), rgba(13, 13, 173, 0.745));
+        }
+
+        div.gradient2 {
+            background: linear-gradient(45deg, rgb(213, 44, 179), rgba(105, 5, 105, 0.745));
+        }
+
+        div.gradient3 {
+            background:linear-gradient(to bottom,  yellow 50%, blue 50%, blue 75%, red 75%);
+        }
+
+        div.gradient4 {
+            background: linear-gradient(to right, black 50%, #fff 0%);
+            background-size: 50px 100%;
+        }
+
+        div.gradient5 {
+            background: radial-gradient(circle, rgb(181, 187, 64), rgb(255, 94, 0)); 
+        }
+
+        div.gradient6 {
+            background: radial-gradient(circle, yellow 20%, yellow 20%,
+                                                rgba(244,30,20,255) 20%,  rgba(244,30,20,255) 40%,
+                                                rgb(77,180,196) 40%,   rgb(77,180,196) 60%,
+                                                black 60%,  black 80%,
+                                                white 80%);
+        }
+
+        section h4 {
+            margin: 0;
+            text-align: center;
+            font-size: 8rem;
+        }
+
+        h4.text-clip1 {
+            background: linear-gradient(-107deg, red, blue);
+
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h4.text-clip2 {
+            background: url(images/fire.jpg) ;
+
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: anim 4s infinite;
+        }
+
+        @keyframes anim {
+            0% {
+                background-position: 0px;
+            }
+
+            100% {
+                background-position: -200px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="controls">
@@ -14,10 +98,29 @@
     </nav>
     <main>
         <header>
-          <h1> </h1>
+          <h1>NEW BACKGROUNDS</h1>
+          <h2>Nuevas caracteristicas (multiple, gradients, clip-text)</h2>
         </header>
-        <section>
-         
+        <section>   
+            <h3>Bg Multiple</h3>
+            <div class="multiples"></div>
+
+            <h3>Bg Gradient</h3>
+            <h5>Linear-gradient (to direction, color1, color2)</h5>
+            <div class="gradient1"></div>
+            <h5>Linear-gradient (degrees, color1, color2)</h5>
+            <div class="gradient2"></div>
+            <h5>Colombia Flag</h5>
+            <div class="gradient3"></div>
+            <h5>Vertical Lines</h5>
+            <div class="gradient4"></div>
+            <h5>Radial-Gradent (shape, color1, color2)</h5>
+            <div class="gradient5"></div>
+            <h5>BullsEye</h5>
+            <div class="gradient6"></div>
+            <h3>Bg Clip</h3>
+            <h4 class="text-clip1">ADSO</h4>
+            <h4 class="text-clip2">FIRE</h4>
        </section>
     </main>
 </body>

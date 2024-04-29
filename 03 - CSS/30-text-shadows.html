@@ -3,8 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>text-shadows</title>
     <link rel="stylesheet" href="css/master.css">
+    <style>
+        p.txt {
+            text-align: center;
+            font-size: 4rem;
+            margin: 0;
+            color: white;
+        }
+
+        p.txt1 {
+            font-size: 3rem;
+            text-shadow: 2px 2px 6px black;
+        }
+
+        p.txt2 {
+            text-shadow: -4px -4px 8px black;
+        }
+
+        p.txt3{
+            text-shadow: 1px 0px 1px #aaa,
+                         0px 1px 1px #999,
+                         2px 1px 1px #aaa,
+                         1px 2px 1px #999,
+                         3px 2px 1px #aaa,
+                         2px 3px 1px #999,
+                         4px 3px 1px #aaa,
+                         3px 4px 1px #999,
+                         5px 4px 1px #aaa,
+                         4px 5px 1px #999,
+                         6px 5px 1px #aaa,
+                         5px 6px 1px #999,
+                         7px 6px 1px #aaa;
+        }
+
+        p.txt4{
+            letter-spacing: 0.5rem;
+            text-shadow: 0px  2px  0px #002aff,
+                        -2px  5px  0px #0022c9,
+                        -4px  8px  0px #001eb5,
+                        -6px  11px 0px #001789,
+                        -8px  14px 0px #00105c,
+                        -10px 17px 0px #000b41,
+                        -12px 20px 0px #000520,
+                        -14px 23px 0px #000000;
+
+        }
+    </style>
 </head>
 <body>
     <nav class="controls">
@@ -14,10 +60,13 @@
     </nav>
     <main>
         <header>
-          <h1> </h1>
+          <h1>TEXT SHADOWS</h1>
         </header>
         <section>
-         
+            <p class="txt txt1">Spider - Man</p>
+            <p class="txt txt2">Venom</p>
+            <p class="txt txt3">Kraven</p>
+            <p class="txt txt4">Rhino</p>
        </section>
     </main>
 </body>

@@ -91,7 +91,7 @@ main {
         }
 
         a:is(:hover)  {
-            transform: translate(-15px);
+            transform: translate(-10px);
             background-color: whitesmoke;
             
         }

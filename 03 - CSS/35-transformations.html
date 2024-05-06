@@ -5,6 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transformations</title>
     <link rel="stylesheet" href="css/master.css">
+    <style>
+        section img{
+            display: block;
+            margin-inline: auto;
+            margin-block: 1rem;
+        }
+
+        img.transform1 {
+            transform: rotate(90deg);
+        }
+
+        img.transform2 {
+            transform: scale(0.5);
+        }
+
+        img.transform3 {
+            transform: translate(-100px);
+        }
+
+        img.transform4 {
+            transform: skew(30deg);
+        } 
+
+        img.transform5 {
+            transform: rotate(45deg) scale(0.8);
+        }
+         </style>
 </head>
 <body>
     <nav class="controls">
@@ -15,9 +42,19 @@
     <main>
         <header>
           <h1>TRANSFORMATIONS</h1>
+          <h2>Propiedad que permite rotar, escalar, rotar, inclinar o trasladar un elemento</h2>
         </header>
         <section>
-         
+            <h3>Rotate:  90deg</h3>
+            <img src="images/superior-iron-man.png" class="transform1" width ="200px">
+            <h3>Scale:  0.5</h3>
+            <img src="images/superior-iron-man.png" class="transform2" width ="200px">
+            <h3>TranslateX: -50px</h3>
+            <img src="images/superior-iron-man.png" class="transform3" width ="200px">
+            <h3>Skew: 30deg</h3>
+            <img src="images/superior-iron-man.png" class="transform4" width ="200px">
+            <h3>Rotate Scale: </h3>
+            <img src="images/superior-iron-man.png" class="transform5" width ="200px">
        </section>
     </main>
 </body>

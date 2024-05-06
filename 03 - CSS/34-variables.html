@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>variables</title>
     <link rel="stylesheet" href="css/master.css">
+    <style>
+        :root {
+            --bg-box: #0009; 
+            --color-txt: #fffa; 
+            --fz-h4: 2rem;  
+        }
+
+        article {
+            background-color: var(--bg-box);
+            color: var(--color-txt);
+            padding: 1rem;
+        }
+
+        article h4 {
+            background-color: var(--bg-box);
+            font-size: var(--fz-h4);
+            text-align: center;
+        }
+
+        section article p {
+            font-size: 1rem;
+            text-align: justify;
+        }
+        
+    </style>
 </head>
 <body>
     <nav class="controls">
@@ -15,9 +40,15 @@
     <main>
         <header>
           <h1>VARIABLES</h1>
+          <h2>Esta función es usada para insertar un valor en una variable de CSS</h2>
         </header>
         <section>
-         
+         <article>
+            <h2>Lorem, ipsum dolor.</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae cum quae, voluptatem similique ut alias iusto officiis eaque, voluptates adipisci veritatis dolores, non quisquam repellat dicta perferendis voluptatibus. Minima, eaque!
+            </p>
+         </article>
        </section>
     </main>
 </body>

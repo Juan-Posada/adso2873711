@@ -5,6 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>transitions</title>
     <link rel="stylesheet" href="css/master.css">
+    <style>
+        section img {
+            display: block;
+            margin: 1rem auto;
+        }
+
+        img.trans1 {
+            transition: transform 0.5s ease-in;
+        }
+
+        img.trans1:hover {
+            transform: scale(0.5);
+        }
+
+        img.trans2 {
+            transition: transform 1s ease-out;
+        }
+
+        img.trans2:hover {
+            transform: rotate(-180deg);
+        }
+
+        img.trans3 {
+            transition: all 1s ease-in-out;
+        }
+
+        img.trans3:hover {
+            transform: rotateY(720deg);
+        }
+
+        img.trans4 {
+            transition: all 0.5s linear;
+        }
+
+        img.trans4:hover {
+            transform: translateX(100px);
+        }
+
+        img.trans5 {
+            transition: transform 1s,
+                                width 1s 1s;
+        }
+
+        img.trans5:hover {
+            transform: translateX(90px);
+            width: 100px;                    
+        }
+    </style>
 </head>
 <body>
     <nav class="controls">
@@ -15,9 +63,19 @@
     <main>
         <header>
           <h1>TRANSITIONS</h1>
+          <h2>Permite definir una transición entre dos estados del elemento.</h2>
         </header>
         <section>
-         
+            <h3>Example 01</h3>
+            <img src="images/modok.png" width="180px" class="trans1">
+            <h3>Example 02</h3>
+            <img src="images/modok.png" width="180px" class="trans2">
+            <h3>Example 03</h3>
+            <img src="images/modok.png" width="180px" class="trans3">
+            <h3>Example 04</h3>
+            <img src="images/modok.png" width="180px" class="trans4">
+            <h3>Example 05</h3>
+            <img src="images/modok.png" width="180px" class="trans5"> 
        </section>
     </main>
 </body>

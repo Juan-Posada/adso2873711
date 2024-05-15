@@ -5,6 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>functions</title>
     <link rel="stylesheet" href="css/master.css">
+    <style>
+        section div {
+            background-color: #fff6;
+            border: 2px solid #fff9;
+            border-radius: 4px;
+            height: 160px;
+            margin: auto;
+        }
+
+        div.func1 {
+            height: calc(30px * 4);
+            width: calc(600 / 2);
+        }
+
+        div.func2 {
+            height: max(180px, 10vw);
+            width: min(10vh, 100px);
+        }
+
+        div.func3 {
+            text-align: justify;
+            font-size: clamp(1rem, 10vW, 1.34rem);
+        }
+    </style>
 </head>
 <body>
     <nav class="controls">
@@ -15,9 +39,16 @@
     <main>
         <header>
           <h1>FUNCTIONS</h1>
+          <h2>Son declaraciones que permiten invocar datos especiales para procesar por medio de un cálculo</h2>
         </header>
         <section>
-         
+            <h3>Math functions</h3>
+            <h4>calc()</h4>
+            <div class="func1"></div>
+            <h4>max() & min()</h4>
+            <div class="func2"></div>
+            <h4>clamp()</h4>
+            <div class="func3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae corrupti rerum quam eligendi optio odit earum facere, beatae magni id.</div>
        </section>
     </main>
 </body>

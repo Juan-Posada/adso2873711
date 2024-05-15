@@ -19,64 +19,65 @@
         
         header {
             justify-content: center;
+            align-items: center;
             display: flex;
+
         }
         
         figure.logo {
-            background: url(images/logo-Avengers.png);
-            width: 1200px;
-            height: 600px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            margin: 0;
+        }
+
+        figure.logo img {
+            width: 100%;
+            height: 100%;
         }
         
         nav.heroes {
             display: flex;
             justify-content: center;
+            align-items: center;
+            width: 1200px;
+            margin: auto;
+            gap: 50px;
         }
         
         div.heroe {
-            width: 400px;
-            height:400px;
-            margin: 20px ;
+            height: 250px;
+            width: 250px;
             border: 2px solid  white;
             position: relative;
         }
 
         div.anim {
-            height: 90px;
+            height: 20%;
             background-color: #ffffff94;
             width: 100%;
             position: absolute;
             bottom: 0;
             text-align: center;
-            font-size: 1.7rem;
+            font-size: 1rem;
             font-weight: 800;
+            transition: all 0.34s ease-in;
         }
 
-        div.heroe.ironman {
-            background: url(images/iron-man.jpg);
-        }
-
-        div.heroe.captainamerica {
-            background: url(images/captain-america.jpg);
-        }
-        
-        div.heroe.hulk {
-            background: url(images/hulk.jpg);
-        }
-
-        div.heroe.thor {
-            background: url(images/thor.jpg);
+        div.anim:hover {
+            height: 25%;
         }
 
         nav.villanos {
             align-items: center;
             justify-content: center;
-            width: 70%;
+            width: 1180px;
             margin: 40px  auto;
+            height: 400px;
         }
 
         div.villano {
-            height: 400px;
+            height: 250px;
             width: 98%;
             margin: 40px auto;
             background-color: rgba(255, 255, 255, 0.818);
@@ -86,38 +87,112 @@
         }
 
         div.img {
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 100%;
         }
- 
+
         div.img.one {
-            background: url(images/doctor-doom.jpg);
+            background: url(images/doctor-doom.jpg) no-repeat;
+            
         }
 
         div.img.two {
-            background: url(images/galactus.jpg);
+            background: url(images/galactus.jpg) no-repeat;
+            
         }
-
+ 
         div.texto {
-            width: 1200px;
-            height: 400px;
+            width: 80%;
+            height: 100%;
             padding: 35px;
-            text-align: justify;
-            font-size: 1.7rem;
         }
 
-        @media (max-width: 780px) {
-            nav.heroes {
-            display: flex;
+        div.texto h2 {
+            top: 0;
+        }
+
+        div.texto p {
+            text-align: start;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 950px) {
+          figure.logo {
+            transform: scale(0.8);
+          }
+
+          nav.heroes {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 550px;
+            margin: auto;
+            height: 600px;
+            }
+
+          nav.villanos {
+            align-items: center;
             justify-content: center;
+            width: 550px;
+            margin: 40px  auto;
+            height: 400px;
+          }
+
+          div.villano {
+            width: 100%;
+          }
+
+          div.img {
+            width: 250px;
+            height: 100%;
+          }
+
+          div.texto {
+            width: 55%;
+          }
+
+          div.texto {
+            overflow-y: scroll;
+            box-sizing: border-box;
+          }
         }
-        div.heroe {
-            width: 400px;
-            height:400px;
-            margin: 20px ;
-            border: 2px solid  white;
-            position: relative;
-        }
+
+        @media (max-width: 690px) {
+            figure.logo {
+                transform: scale(0.7);
+            }
+
+            nav.heroes {
+                height: auto;
+                display: list-item;
+                justify-content: center;
+                align-items: center;
+                width: 250px;
+            }
+
+            div.heroe {
+                margin: 30px auto;
+            }
+
+            nav.villanos {
+                width: 250px;
+                height: 1000px;
+            }
+
+            div.villano {
+                display: block;
+                height: 500px;
+            }
+
+            div.img {
+                width: 250px;
+                height: 250px;
+                margin: 0;
+            }
+
+            div.texto {
+                height: 220px;
+                width: 250px;
+            }
         }
 
     </style>
@@ -125,31 +200,43 @@
 <body>
     <main>
     <header>
-        <figure class="logo"></figure>
+        <figure class="logo">
+            <img src="images/logo-Avengers.png" class="logo">
+        </figure>
     </header>
     <section>
         <nav class="heroes">
             <div class="heroe ironman">
+                <img src="images/iron-man.jpg" width="250px" height="250px">
                 <div class="anim"><p>Iron-Man</p></div>
             </div>
             <div class="heroe captainamerica">
+                <img src="images/captain-america.jpg" width="250px" height="250px">
                 <div class="anim"><p>Captain America</p></div>
             </div>
             <div class="heroe hulk">
+                <img src="images/hulk.jpg" width="250px" height="250px">
                 <div class="anim"><p>Hulk</p></div>
             </div>
             <div class="heroe thor">
+                <img src="images/thor.jpg" width="250px" height="250px">
                 <div class="anim"><p>Thor Odinson</p></div>
             </div>
         </nav>
         <nav class="villanos">
             <div class="villano doctordoom">
                 <div class="img one"></div>
-                <div class="texto"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias obcaecati tenetur unde ut perspiciatis voluptate alias quasi quo recusandae dolorem, nisi quia possimus cupiditate nam natus expedita minus esse ducimus? Cupiditate omnis porro saepe in natus commodi corrupti? Obcaecati ipsum atque fugit non labore aliquid! Voluptatem recusandae, eligendi placeat modi incidunt quidem quasi minus. Praesentium porro cum tempore laudantium. Doloribus magnam autem error ab minus veniam labore asperiores vel animi architecto optio nulla deserunt, alias officia consectetur deleniti! A accusantium non impedit vel ratione quia esse atque, nam molestiae perferendis blanditiis, sapiente quod facere obcaecati laborum inventore saepe? Dicta, atque.</p></div>
+                <div class="texto">
+                    <h2>Doctor Doom</h2>
+                    <p>Víctor Von Doom, nació y creció para convertirse en una de las mentes más brillantes que el mundo haya conocido, hijo de gitanos, aprendió el dominio de las ciencias ocultas de la magia, Víctor también sería un experto en la ciencia de los hombres, uniendo estos dos conocimientos a su deseo de poder, El Doctor Doom se convertiría en el modelo de supervillano por excelencia.</p>
+                </div>
             </div>
             <div class="villano galactus">
                 <div class="img two"></div>
-                <div class="texto"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias obcaecati tenetur unde ut perspiciatis voluptate alias quasi quo recusandae dolorem, nisi quia possimus cupiditate nam natus expedita minus esse ducimus? Cupiditate omnis porro saepe in natus commodi corrupti? Obcaecati ipsum atque fugit non labore aliquid! Voluptatem recusandae, eligendi placeat modi incidunt quidem quasi minus. Praesentium porro cum tempore laudantium. Doloribus magnam autem error ab minus veniam labore asperiores vel animi architecto optio nulla deserunt, alias officia consectetur deleniti! A accusantium non impedit vel ratione quia esse atque, nam molestiae perferendis blanditiis, sapiente quod facere obcaecati laborum inventore saepe? Dicta, atque.</p></div>
+                <div class="texto">
+                    <h2>Galactus</h2>
+                    <p>Temido en todo el Universo, skull turtle , único sobreviviente del universo que existió antes que este, su nombre es temido por incontables centollas por todo el universo, que viven temiendo la inevitable llegada del devorador de mundos!. Obtuvo ese apodo debido a que consume mundos para sobrevivir. Pero al tener un paladar exigente, solo consume mundos con vida inteligente.</p>
+                </div>
             </div>
         </nav>
     </section>

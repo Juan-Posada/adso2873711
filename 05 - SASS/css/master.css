@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;800&display=swap');
+
+body {
+    background-color: #3C0740;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%233C0740' cx='50' cy='0' r='50'/%3E%3Cg fill='%23410943' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23460c47' cx='50' cy='100' r='50'/%3E%3Cg fill='%234b0f4a' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%2350124d' cx='50' cy='200' r='50'/%3E%3Cg fill='%23551450' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%235a1753' cx='50' cy='300' r='50'/%3E%3Cg fill='%23601a57' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23651c5a' cx='50' cy='400' r='50'/%3E%3Cg fill='%236a1f5d' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%23702260' cx='50' cy='500' r='50'/%3E%3Cg fill='%23752463' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%237b2766' cx='50' cy='600' r='50'/%3E%3Cg fill='%23802a69' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23862d6c' cx='50' cy='700' r='50'/%3E%3Cg fill='%238b306f' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23913272' cx='50' cy='800' r='50'/%3E%3Cg fill='%23973575' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%239c3878' cx='50' cy='900' r='50'/%3E%3Cg fill='%23a23b7b' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23A83E7E' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: contain;
+    font-family: Poppins, sans-serif;
+    color: white;
+}
+
+nav.controls {
+    position: fixed;
+    a:is(:link, :visited) {
+        border-radius: 70px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        background-color: #0009;
+        height: 40px;
+        transform: scale(0.8);
+        opacity: 0.6;
+        padding: 10px;
+        width: 40px;
+        transition: all 0.4s ease-in;
+    }
+    a:is(:hover) {
+        opacity: 1;
+        transform: scale(1);
+    }
+    svg {
+        width: 40px;
+    }
+
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    align-items: center;
+    min-height: 100vh;
+
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        
+        h1, h2 {
+            color: whitesmoke;
+            text-align: center;
+            margin: 0;
+        }
+        h1 {
+            font-size: 4rem;
+            font-weight: 400;
+        }
+        h2 {
+            font-size: 1.4rem;
+            font-weight: 300;
+        }
+        img {
+            border-radius: 50%;
+            width: 160px;
+            border: 10px solid #fff9;
+            background-color: #fff7;
+        }
+    }
+
+    menu {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        gap: 1rem;
+
+        a:is(:link, :visited) {
+            background-color: #fff9;
+            border-radius: 50px;
+            display: flex;
+            color: #0009;
+            gap: 1rem;
+            align-items: center;
+            padding: 1rem;
+            text-decoration: none;
+            transition: all 0.5s ease-in;
+            width: 280px;
+            
+            i {
+                background-color: #cc649c;
+                border-radius: 20px;
+                color: floralwhite;
+                font-style: normal;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.9s ease-in;
+                height: 40px;
+                width: 40px;
+            }
+        }
+
+        a:is(:hover)  {
+            transform: translate(-10px);
+            background-color: whitesmoke;
+            
+        }
+
+        a:is(:hover) i {
+            transform: scale(1.4) rotateX(720deg);
+        }
+    }
+
+    section {
+        border-radius: 10px;
+        background-color: #fff9 ;
+        color: #0009;
+        padding: 10px;
+        width: 400px;
+        
+
+        h3{
+        border-bottom: 2px dotted #0004;    
+        color: #0009;
+        font-size: 1.4rem;
+        margin: 0;
+        width: fit-content;
+    }
+    p {
+        font-size: 1rem;
+        margin: 10px 0;
+    }
+     xmp{
+        border-radius: 10px;
+        background-color: #0009;
+        color: #fff9;
+        padding: 0 10px 10px 10px;
+    }
+    }
+}

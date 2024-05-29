@@ -72,5 +72,10 @@ main {
         a:is(:hover) i {
             transform: scale(1.4) rotateY(720deg);
         }
+
+        a.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
     }
 }

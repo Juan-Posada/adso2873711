@@ -18,20 +18,11 @@ html {
     text-decoration: none;
   }
   
-
-  div.section {
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    width: 70;
-  }
-  
   header {
     width: 100%;
-    display: flex;
+    display: inline-block;
     background-color: #630c41;
-    justify-content: end;
-
+    align-items: center;
   }
   
   .hamburger {
@@ -59,31 +50,23 @@ html {
   }
 
   div.titulo {
-    width: 300px;
-    position: relative;
-    height: 50px;
-   
+    width: 30%;
     
   }
 
   nav {
-    background-color: #630c41;
+    background-color: #9b0987e0;
     margin: 0;
     max-height: 0;
     overflow: hidden;
     clear:both;
     transition: max-height .3s cubic-bezier(0.63, 0, 0.25, 1);;
-    position: relative;
 
-
-    
   }
   nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
-    position: relative;
-    
     
   }
   nav li {
@@ -99,17 +82,17 @@ html {
   
   header input[type="checkbox"]:checked ~ nav {
     max-height: 150px;
-    border-bottom: #630c41 5px solid;
+    border-bottom: #404040 5px solid;
   }
   
   header a:hover,
   header a:focus,
   header label:hover,
   header label:focus {
-    background-color: #44082d
+    background-color: #9b0988;
   }
   
-  @media (min-width: 900px) {
+  @media (min-width: 700px) {
     .hamburger {
       display: none;
     }
@@ -118,7 +101,6 @@ html {
       float: right;
       border: 0 !important;
       max-height: none;
-      justify-content: end;
     }
     nav ul, nav li, nav li a {
       display: inline-block;
@@ -127,8 +109,6 @@ html {
       display: inline-block;
       padding: 15px 1em;
     }
-   
-    
   }
   
   .hidden {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>images</title>
+    <title>floating-labels</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/master.css">
 </head>
@@ -15,14 +15,19 @@
     </nav>
     <main>
         <header>
-            <h1>IMAGES</h1>
-            <h2>Optar por que las imágenes tengan un comportamiento responsivo (para que nunca sean más anchas que sus padres) y agregarles estilos livianos.</h2>
+            <h1>FLOATING LABELS</h1>
+            <h2>Cree etiquetas de formulario maravillosamente simples que floten sobre sus campos de entrada.</h2>
         </header>
         <section>
-            <h3 class="my-3">Responsive Images</h3>
-            <img src="https://placehold.co/400x200" class="img-fluid"">
-            <h3 class="my-3">Image thumbnails</h3>
-            <img src="https://placehold.co/200x200" class="img-thumbnail">
+            <h3 class="my-3">Example</h3>
+            <div class="form-floating mb-3">
+                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword">Password</label>
+            </div>
         </section>
     </main>
 </body>

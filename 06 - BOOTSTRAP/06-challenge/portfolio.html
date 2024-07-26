@@ -20,37 +20,84 @@
                 align-items: center;
                 justify-content: center;
                 display: flex;
-                
-                img.logo{
-                    width: 211px;
-                    height: 45px;
-                }
-                
             }
             
             div.foto{
                 height: 750px;
-                border: 2px solid black;
                 justify-content: center;
                 align-items: end;
                 display: flex;
             }
             div.text{
                 height: 750px;
-                border: 2px solid;
+                justify-content: start;
+                align-items: center;
+                button{
+                    background-color: #F0BBB0;
+                    width: 135px;
+                    height: 57px;
+                    position: relative;
+                    top: 180px;
+                    left: -550px;
+                }
+            }
+
+            p.hello{
+                font-size: 28pt;
+                position: relative;
+                bottom: 2;
             }
         }
         
-           
-        .scrolled {
-            background-color: black;
-        }
+        
         section.two{
             background-color: #FFFFFF;
+            div{
+            
+                height: 100%;
+            }
+
+            div.fs{
+                justify-content: center;
+                align-items: center;
+                display: flex;
+
+                img.fss{
+                    margin-top: 100px;
+                }
+            }
+            div.progress{
+                height: 16.5px;
+                background-color:  #E9E9E9;
+            }
+            div.progress-bar{
+                background-color: #F0BBB0;
+            }
+            div.text{
+                
+                height: calc(750px / 2);
+                img.txt{
+                    position: relative;
+                    top: 150px;
+                }
+            }
+            div.barras{
+                height: calc(750px / 2);
+            }
         }
         section.three {
             height: 910px;
             background-color: #f8f8f8;
+           
+            div.a{
+                height: 315px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            div.b{
+                height: 595px;
+            }
         }
         section.four {
             height: 636px;
@@ -66,12 +113,12 @@
 <body>
     <section class="one" id="one">
        <div class="fixed-top row">
-        <div class="col-2">
+        <div class="col-lg-2 col-md-1">
             <a href="#one"><img class="logo" src="../images/logo-section01.png"></a>
         </div>
-        <div class="col-2"></div>   
-        <div class="col-3"></div>   
-        <div class="col-5">
+        <div class="col-lg-2"></div>   
+        <div class="col-lg-3"></div>   
+        <div class="col-lg-5">
             <ul class="nav">
                 <li class="nav-item">
                   <a class="nav-link text-black-50" href="#one">Home</a>
@@ -89,13 +136,59 @@
         </div>
     </div>
     <div class="row">
-        <div class="text col-5"></div>
-        <div class="foto col-4"><img src="../images/perfilPhoto-section01.png"></div>
-        <div class="foto col-3"></div>
+        <div class="text col-lg-5">
+           <img class="ms-5" src="../images/text-section01.png" alt="">
+           <button type="button" class="btn text-white">Hire Me</button>
+        </div>
+        <div class="foto col-lg-4 col-md-12"><img src="../images/perfilPhoto-section01.png"></div>
+        <div class="foto col-lg-3"></div>
     </div>
     </section>
-    <section class="two" id="two"></section>
-    <section class="three" id="three"></section>
+    <section class="two" id="two">
+        <div class="row">
+            <div class="fs col-lg-4"><img class="fss" src="../images/photo-section02.png"></div>
+            <div class="col-lg-2"></div>
+            <div class="col-lg-5">
+                <div class="row">
+                    <div class="text col-lg-12"> 
+                        <img class="txt" src="../images/text-section02.png">
+                    </div>
+                    <div class="barras col-lg-12">
+                        <h5 class="m-2 mt-5">UI/UX DESIGN</h5>
+                        <div class="progress m-2" role="progressbar" aria-label="Success" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar " style="width: 40%"></div>
+                        </div>
+
+                        <h5 class="m-2 mt-3">Web Design</h5>
+                        <div class="progress m-2" role="progressbar" aria-label="Info" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar " style="width: 75%"></div>
+                        </div>
+                        <h5 class="m-2 mt-3">HTML / CSS</h5>
+                        <div class="progress m-2" role="progressbar" aria-label="Warning" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar " style="width: 95%"></div>
+                        </div>
+                        <h5 class="m-2 mt-3">Sketch</h5>
+                        <div class="progress m-2" role="progressbar" aria-label="Danger" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar " style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-1">
+        </div>
+    </section>
+    <section class="three" id="three">
+        <div class="row">
+            <div class="a col-lg-12">
+                <img src="../images/text-section03.png" alt="">
+            </div>
+            <div class="b col-lg-12">
+                <div class="row">
+                    
+                </div>
+            </div>
+        </div>
+    </section>
     <section class="four" id="four"></section>
     <section class="five"></section>
 </body>

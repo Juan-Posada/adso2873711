@@ -3,9 +3,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Challenge</title>
+    <style>
+        @font-face {
+            font-family: 'NBA-bulls';
+            src: url('fonts/NBA Bulls.ttf');
+        }
+
+        body {
+            background: url('images/bg-challenge.png');
+            font-family: 'NBA-bulls', sans-serif;
+            overflow-x: hidden;
+        }
+        section {
+            height: 680px;
+            width: 384px;
+        }
+        element.hidden {
+            display: none;
+        }
+        img.changeP {
+            position: relative;
+            top: 23px;
+        }
+    </style>
 </head>
-<body>
-    
+<body class="flex justify-center pt-[7%] gap-[27px]">
+    <section id="one" class="one rounded-[25px] bg-[#1B1B1B] h-[680px] w-[384px]">
+        <div class="image h-[400px] w-[384px]">
+            <img src="images/jordanVertical.png" alt="Jordan Vertical">
+        </div>
+        <div class="changePoints h-[15px] w-[65px] mx-auto">
+            <img src="images/changePage.png" class="changeP" alt="Change Page">
+        </div>
+        <div class="text w-[155px] h-[76px] mx-auto pt-[32px]">
+            <h1 class="text-white text-[48px]">JORDAN</h1>
+        </div>
+        <div class="textJordan w-[246px] mx-auto pt-[35px]">
+            <h2 class="text-[#CFCFCF] text-[14px] text-center">not only the best basketball player, he is the best athlete of all time</h2>
+        </div>
+        <div class="button pt-[22px] px-24">
+            <button onclick="showSection('two')" class="bg-[#383838] text-[#CFCFCF] h-[53px] w-[192px] rounded-[8px] text-[14px] hover:h-[60px] transition-all duration-500">KNOW HIM</button>
+        </div> 
+    </section>
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <section id="two" class="two rounded-[25px] bg-[#1B1B1B] h-[680px] w-[384px] hidden">
+        <button onclick="showSection('one')" class="back">
+            <img src="images/back.png" class="pt-3 pl-3" alt="Back">
+        </button>
+        <div class="tilte pl-8 pt-2">
+            <h1 class="text-white text-[32px]">Skill Stats</h1>
+        </div>
+        <div class="stat flex pl-8 pt-8 hover:pl-16 transition-all duration-500">
+            <div class="percent bg-[#4E0000] text-[#CFCFCF] text-center rounded-[8px] w-[50px] h-[50px] hover:">
+                <h1 class="pt-3">100%</h1>
+            </div>
+            <div class="textCont pl-2 pt-2">
+                <h3 class="text-[#CFCFCF] text-[14px]">SHOOT</h3>
+                <h5 class="text-[#CFCFCF] text-[7px]">the greatest shot in the nba</h5>
+            </div>
+        </div>
+        <div class="image mx-auto w-[320px] h-[141px] pt-4">
+            <img src="images/jordanHorizontal.png" alt="Jordan Horizontal">
+        </div>
+        <div class="stat flex pl-8 pt-8 hover:pl-16 transition-all duration-500">
+            <div class="percent bg-[#4E0000] text-[#CFCFCF] text-center rounded-[8px] w-[50px] h-[50px]">
+                <h1 class="pt-3">100%</h1>
+            </div>
+            <div class="textCont pl-2 pt-2">
+                <h3 class="text-[#CFCFCF] text-[14px]">SHOOT</h3>
+                <h5 class="text-[#CFCFCF] text-[7px]">the greatest shot in the nba</h5>
+            </div>
+        </div>
+        <div class="stat flex pl-8 pt-4 hover:pl-16 transition-all duration-500">
+            <div class="percent bg-[#4E0000] text-[#CFCFCF] text-center rounded-[8px] w-[50px] h-[50px]">
+                <h1 class="pt-3">100%</h1>
+            </div>
+            <div class="textCont pl-2 pt-2">
+                <h3 class="text-[#CFCFCF] text-[14px]">SHOOT</h3>
+                <h5 class="text-[#CFCFCF] text-[7px]">the greatest shot in the nba</h5>
+            </div>
+        </div>
+        <div class="stat flex pl-8 pt-4 hover:pl-16 transition-all duration-500">
+            <div class="percent bg-[#4E0000] text-[#CFCFCF] text-center rounded-[8px] w-[50px] h-[50px]">
+                <h1 class="pt-3">100%</h1>
+            </div>
+            <div class="textCont pl-2 pt-2">
+                <h3 class="text-[#CFCFCF] text-[14px]">SHOOT</h3>
+                <h5 class="text-[#CFCFCF] text-[7px]">the greatest shot in the nba</h5>
+            </div>
+        </div>
+        <div class="button pt-[48px] px-24">
+            <button onclick="showSection('three')" class="bg-[#383838] text-[#CFCFCF] h-[53px] w-[192px] rounded-[8px] text-[14px] hover:h-[60px] transition-all duration-500">NEXT PAGE</button>
+        </div> 
+    </section>
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <section id="three" class="three rounded-[25px] bg-[#1B1B1B] h-[680px] w-[384px] hidden">
+        <button onclick="showSection('two')" class="back">
+            <img src="images/back.png" class="pt-3 pl-3" alt="Back">
+        </button>
+        <div class="tilte pl-8 pt-2">
+            <h1 class="text-white text-[32px]">Record book</h1>
+            <h3 class="text-[#CFCFCF]">of black jesus</h3>
+        </div>
+        <div class="tabla w-[3330px] h-[211px] pl-8 pt-14">
+            <img src="images/tabla.png" alt="Tabla">
+        </div>
+        <div class="text text-[#CFCFCF] text-center text-[16px] w-[169px] h-[68px] mx-auto pt-[120px]">
+            <h3>he will always be jordan, he will always be the goat</h3>
+        </div>
+        <div class="button pt-[125px] px-24">
+            <button onclick="showSection('one')" class="bg-[#383838] text-[#CFCFCF] h-[53px] w-[192px] rounded-[8px] text-[14px] hover:h-[60px] transition-all duration-500">
+                <img src="images/jordan 1.png" class="mx-auto my-auto" alt="Jordan">
+            </button>
+        </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <script>
+        function showSection(sectionId) {
+            document.getElementById('one').classList.add('hidden');
+            document.getElementById('two').classList.add('hidden');
+            document.getElementById('three').classList.add('hidden');
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+
 </body>
 </html>

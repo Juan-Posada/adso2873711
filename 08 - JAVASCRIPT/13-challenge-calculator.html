@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13-challenge-calculator</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kavoon&family=Kodchasan:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Oxanium:wght@200..800&family=Saira:ital,wght@0,100..900;1,100..900&display=swap');
+        
+        section{
+            
+            background: url(images/calculator/backGround.svg);
+        }
+
+        div.calculator{
+            font-family: "JetBrains Mono", monospace;
+            background: url(images/calculator/body.png);
+            width: 307px;
+            height: 439px;
+            margin: 1rem auto;
+        }
+        input.operation{
+            font-family: "JetBrains Mono", monospace;
+            background: none;
+            border: none;
+            width: 166px;
+            height: 16px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #ededed;
+            margin-right: 50px;
+            margin-bottom: -40px;
+            margin-top: 70px;
+        }
+        h4.result{
+            overflow-x: hidden;
+            margin-right: 50px;
+            height: 24px;
+            width: 166px;
+            font-size: 24px;
+            font-weight: 400;
+            color: white;
+        }
+        header.display{
+            position: relative;
+            height: 101px;
+            button.mode{
+                background: url(images/calculator/modo.png);
+                border: none;
+                height: 54px;
+                position: absolute;
+                transition: transform 0.2s ease-in;
+                top: 59px;
+                margin: 0;
+                right: 46px;
+                width: 53px;
+                &:hover{
+                    cursor: pointer;
+                    transform: scale(0.95);
+                }
+            }
+        }
+        footer.buttons{
+            margin-top: 55px;
+            display: grid;
+            grid-template-columns: repeat(4, 55px);
+            margin-left: 35px;
+            gap: 3px;
+            button{
+                font-family: "JetBrains Mono", monospace;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: none;
+                cursor: pointer;
+                transition: transform 0.2s ease-in;
+                width: 55px;
+                height: 45px;
+                &:hover {
+                        cursor: pointer;
+                        transform: scale(1.05);
+                    } 
+                &.btn-clear{
+                    background: url(images/calculator/btnAllClear.png);
+                }
+                &.btn-back{
+                    background: url(images/calculator/back.png);
+                }
+                &.btn-pow{
+                    background: url(images/calculator/btnPorcentaje.png);
+                }
+                &.btn-mod{
+                    background: url(images/calculator/btnDividir.png);
+                    color: white;
+                }
+                
+                &.btn-9{
+                    background: url(images/calculator/btnNueve.png);
+                }
+                
+                &.btn-8{
+                    background: url(images/calculator/btnOcho.png);
+                }
+                
+                &.btn-7{
+                    background: url(images/calculator/btnSiete.png);
+                }
+                
+                &.btn-prod{
+                    background: url(images/calculator/btnPor.png);
+                    color: white;
+                }
+                &.btn-6{
+                    background: url(images/calculator/btnSeis.png);
+                }
+                
+                &.btn-5{
+                    background: url(images/calculator/btnCinco.png);
+                }
+                
+                &.btn-4{
+                    background: url(images/calculator/btnCuatro.png);
+                }
+                
+                &.btn-subs{
+                    background: url(images/calculator/btnMenos.png);
+                    color: white;
+                }
+                &.btn-3{
+                    background: url(images/calculator/btnTres.png);
+                }
+                
+                &.btn-2{
+                    background: url(images/calculator/btnDos.png);
+                }
+                
+                &.btn-1{
+                    background: url(images/calculator/btnUno.png);
+                }
+                
+                &.btn-add{
+                    background: url(images/calculator/btnMas.png);
+                    color: white;
+                }
+                &.btn-div{
+                    background: url(images/calculator/btnParentesis.png);
+                }
+                
+                &.btn-0{
+                    background: url(images/calculator/btnCero.png);
+                }
+                
+                &.btn-dot{
+                    background: url(images/calculator/btnPunto.png);
+                }
+                
+                &.btn-equal{
+                    background: url(images/calculator/btnIgual.png);
+                    color: white;
+                }
+            }
+        }
+
+            div.calculator.dark {
+                
+                background: url(images/calculator/body-dark.png);
+ 
+                header.display {
+                    button.mode{
+                        background: url(images/calculator/modo-dark.png);
+                    }
+                    input.operation {
+                        color: #4e4e4e;
+                    }
+                    h4.result {
+                        color: black;
+                    }
+                }
+                footer.buttons {
+                    button {
+                        color: white;
+                    &.btn-clear{
+                        background: url(images/calculator/btnAllClear-dark.png);
+                    }
+                    &.btn-back{
+                        background: url(images/calculator/back-dark.png);
+                    }
+                    &.btn-pow{
+                        background: url(images/calculator/btnPorcentaje-dark.png);
+                    }
+                    &.btn-mod{
+                        background: url(images/calculator/btnDividir-dark.png);
+                        color: black;
+                    }
+
+                    &.btn-9{
+                        background: url(images/calculator/btnNueve-dark.png);
+                    }
+
+                    &.btn-8{
+                        background: url(images/calculator/btnOcho-dark.png);
+                    }
+
+                    &.btn-7{
+                        background: url(images/calculator/btnSiete-dark.png);
+                    }
+
+                    &.btn-prod{
+                        background: url(images/calculator/btnPor-dark.png);
+                        color: black;
+                    }
+                    &.btn-6{
+                        background: url(images/calculator/btnSeis-dark.png);
+                    }
+
+                    &.btn-5{
+                        background: url(images/calculator/btnCinco-dark.png);
+                    }
+
+                    &.btn-4{
+                        background: url(images/calculator/btnCuatro-dark.png);
+                    }
+
+                    &.btn-subs{
+                        background: url(images/calculator/btnMenos-dark.png);
+                        color: black;
+                    }
+                    &.btn-3{
+                        background: url(images/calculator/btnTres-dark.png);
+                    }
+
+                    &.btn-2{
+                        background: url(images/calculator/btnDos-dark.png);
+                    }
+
+                    &.btn-1{
+                        background: url(images/calculator/btnUno-dark.png);
+                    }
+
+                    &.btn-add{
+                        background: url(images/calculator/btnMas-dark.png);
+                        color: black;
+                    }
+                    &.btn-div{
+                        background: url(images/calculator/btnParentesis-dark.png);
+                    }
+
+                    &.btn-0{
+                        background: url(images/calculator/btnCero-dark.png);
+                    }
+
+                    &.btn-dot{
+                        background: url(images/calculator/btnPunto-dark.png);
+                    }
+
+                    &.btn-equal{
+                        background: url(images/calculator/btnIgual-dark.png);
+                        color: black;
+                    }
+                        }
+                    }
+            }
+    
+    </style>
+</head>
+<body>
+    <nav class="controls">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fafafa" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        </a>
+    </nav>
+    <main>
+        <header>
+            <h1>CHALLENGE</h1>
+            <h2>Calculator</h2>
+        </header>
+        <section>
+           <div class="calculator">
+                <header class="display">
+                    <button src="images/calculator/modo.png" class="mode"></button>
+                    <input type="text" class="operation" value="" readonly>
+                    <h4 class="result"></h4>
+                </header>
+                <footer class="buttons">
+                    <button class="btn-clear">AC</button>
+                    <button class="btn-back"></button>
+                    <button class="btn-pow" data-opr="**">^</button>
+                    <button class="btn-mod" data-opr="%">%</button>
+                    <!-- segunda fila -->
+                    <button class="btn-9" data-num="9">9</button>
+                    <button class="btn-8" data-num="8">8</button>
+                    <button class="btn-7" data-num="7">7</button>
+                    <button class="btn-prod" data-opr="*">*</button>
+                    <!-- tercera fila -->
+                    <button class="btn-6" data-num="6">6</button>
+                    <button class="btn-5" data-num="5">5</button>
+                    <button class="btn-4" data-num="4">4</button>
+                    <button class="btn-subs" data-opr="-"> - </button>
+                    <!-- cuarta fila -->
+                    <button class="btn-3" data-num="3">3</button>
+                    <button class="btn-2" data-num="2">2</button>
+                    <button class="btn-1" data-num="1">1</button>
+                    <button class="btn-add" data-opr="+">+</button>
+                    <!-- cuarta fila -->
+                    <button class="btn-div" data-opr="/">÷</button>
+                    <button class="btn-0" data-num="0">0</button>
+                    <button class="btn-dot" data-opr=".">.</button>
+                    <button class="btn-equal"> = </button>
+                </footer>
+           </div>
+       </section>
+    </main>
+    <script>
+         // isDarkMode - - - - - - - - - - -
+         const calculator = document.querySelector('.calculator')
+        const btnMode    = document.querySelector('.mode')
+        const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+        function detectMode() {
+            if(isDarkMode.matches) {
+                calculator.classList.add('dark')
+                //console.log('Mode: Dark')
+            } else {
+                calculator.classList.remove('dark')
+                //console.log('Mode: Light')
+            }
+        }
+        detectMode()
+        isDarkMode.addListener(detectMode)
+        btnMode.addEventListener('click', () => {
+            calculator.classList.toggle('dark')
+        })
+        // Buttons Actions - - - - - - - - - - -
+        const btnsNumbers = document.querySelectorAll('button[data-num]')
+        const btnsOpers   = document.querySelectorAll('button[data-opr]')
+        const btnClear    = document.querySelector('.btn-clear')
+        const btnBack     = document.querySelector('.btn-back')
+        const btnEqual    = document.querySelector('.btn-equal')
+        const operation   = document.querySelector('.operation')
+        const result      = document.querySelector('.result')
+        let   isOper      = false
+ 
+        function addToOperation(c) {
+            if(validateLength()) {
+                operation.value += c
+            }
+        }
+ 
+        function validateLength() {
+            if(operation.value.length < 15) {
+                return true
+            } else {
+                return false
+            }
+        }
+ 
+        btnsNumbers.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                //addToOperation(btn.getAttribute('data-num'))
+                isOper = true
+                addToOperation(btn.dataset.num)
+            })
+        })
+ 
+        btnsOpers.forEach((btn) => {
+            btn.addEventListener('click', () => {
+                //addToOperation(btn.getAttribute('data-opr'))
+                if(isOper) {
+                    addToOperation(btn.dataset.opr)
+                    isOper = false
+                }
+            })
+        })
+ 
+        btnClear.addEventListener('click', () => {
+            operation.value = ''
+            result.textContent = ''
+        })
+ 
+        btnEqual.addEventListener('click', () => {
+            if(operation.value.length != ''){
+                result.textContent = '=' + eval(operation.value)
+            }
+            // Result (Challenge)
+        })
+ 
+        btnBack.addEventListener('click', () => {
+            operation.value = operation.value.slice(0, -1)
+            if(isNaN(operation.value.slice(-1))) {
+                isOper = false
+            } else {
+                isOper = true
+            }
+        })
+
+        // Key Events
+        document.addEventListener('keyup', (event) => {
+            console.log(event.keyCode)
+            // 0-9       => keyCode: 48, 49, 50, 51, 52, 53, 54, 55, 56, 57
+            // Backspace => keyCode: 8
+            // Enter     => keyCode: 13
+            // Supr      => keyCode: 46
+            // +         => keyCode: 187
+            // -         => keyCode: 189
+            // /         => keyCode: 16-55
+            // *         => keyCode: 221
+            // %         => keyCode: 16-53
+            // ^         => keyCode: 219
+            // .         => keyCode: 190
+
+
+            switch (event.keyCode) {
+                case 48:
+                    isOper = true
+                    addToOperation(0)
+                break;
+
+                case 49:
+                    isOper = true
+                    addToOperation(1)
+                break;
+
+                case 50:
+                    isOper = true
+                    addToOperation(2)
+                break;
+
+                case 51:
+                    isOper = true
+                    addToOperation(3)
+                break;
+
+                case 52:
+                    isOper = true
+                    addToOperation(4)
+                break;
+
+                case 53:
+                    if(event.shiftKey) {
+                        if(isOper) {
+                            addToOperation('%')
+                            isOper=false
+                        }
+                    } else {
+                        isOper = true
+                        addToOperation(5)
+                    }
+                break;
+
+                case 54:
+                    isOper = true
+                    addToOperation(6)
+                break;
+
+                case 55:
+                if(event.shiftKey) {
+                        if(isOper) {
+                            addToOperation('/')
+                            isOper=false
+                        }
+                    } else {
+                        isOper = true
+                        addToOperation(7)
+                    }
+                break;
+
+                case 56:
+                    isOper = true
+                    addToOperation(8)
+                break;
+                
+                case 57:
+                    isOper = true
+                    addToOperation(9)
+                break;
+                
+                case 46:
+                    operation.value = ''
+                    result.textContent = ''
+                break;
+                
+                case 13:
+                if(operation.value.length != '') {
+                    result.textContent = '=' + eval(operation.value)
+                }
+                break;
+
+                case 8:
+                operation.value = operation.value.slice(0, -1)
+                    if(isNaN(operation.value.slice(-1))) {
+                        isOper = false
+                    } else {
+                        isOper = true
+                    }
+                break;
+
+                case 187:
+                    if (isOper) {
+                        addToOperation('+')
+                        isOper = false
+                    }
+                break;
+
+                case 189:
+                    if (isOper) {
+                        addToOperation('-')
+                        isOper = false
+                    }
+                break;
+
+                case 190:
+                    if (isOper) {
+                        addToOperation('.')
+                        isOper = false
+                    }
+                break;
+
+                case 106:
+                    if (isOper) {
+                        addToOperation('*')
+                        isOper = false
+                    }
+                break;
+
+                case 219:
+                    if (isOper) {
+                        addToOperation('**')
+                        isOper = false
+                    }
+                break;
+            
+                default:
+                break;
+            }
+        })
+
+    </script>
+</body>
+</html>

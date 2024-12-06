@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08-functions</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        h4{
+            font-size: 1.4rem;
+            margin-inline: .8rem;
+
+        }
+        section strong{
+            font-size: 1.4rem;
+        }
+        div.form{
+            display: flex;
+            justify-content: center;
+            gap: .6rem;
+            margin-block: .8rem;
+        }
+        input{
+            width: 80px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="controls">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fafafa" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        </a>
+    </nav>
+    <main>
+        <header>
+            <h1>FUNCTIONS</h1>
+            <h2>Es un bloque de código reutilizable para tareas especificas que se ejecutará cuando "alguien" llama a la función</h2>
+        </header>
+        <section>
+           <h3>01 - Sin parámetros</h3>
+           <h4 id="greeting"></h4>
+           <h3>02 - Con parámetros</h3>
+           <div class="form">
+                <input type="numer" id="n1" min="1" max="99999999" placeholder="Número 1">
+                <strong> + </strong>
+                <input type="numer" id="n2" min="1" max="99999999" placeholder="Número 2">
+                <strong> = </strong>
+                <strong id="result"></strong>
+           </div>
+           <h3>03 - Retorno de valor</h3>
+           <h4 id="time"></h4>
+       </section>
+    </main>
+    <script>
+        //Elementos
+        const greeting = document.querySelector('#greeting');
+        const n1       = document.querySelector('#n1');
+        const n2       = document.querySelector('#n2');
+        const result   = document.querySelector('#result');
+        const time     = document.querySelector('#time');
+
+        // 01 - Función sin parámetros/argumentos
+        function showGReeting() {
+            greeting.textContent = "¡Bienvenido: Visitante! 👋";
+        }
+
+        showGReeting() //Llama la función
+
+
+        // 02 - Fución con parámetros/argumentos
+        function sumValues(n1, n2) {
+            if (n1 != '' && n2 != '') {
+                result.innerText = parseInt(n1) + parseInt(n2) //Parsearlo(cadena a entero)
+
+            }
+        }
+
+        // Añadir Event Listener con array function
+        n1.addEventListener('input', () => {
+            sumValues(n1.value, n2.value)
+        })
+
+        // otra forma de hacerlo
+        n2.oninput =  () => {
+            sumValues(n1.value, n2.value)
+        }
+
+        // 03 - Función con retorno de valor
+        function showTime() {
+            let meridiem = (date.getHours() <=12) ? ' a.m' : ' p.m'
+            return date.getHours() + ':' + date.getMinutes() + meridiem
+        }
+        let date = new Date
+        time.textContent = 'Hora: ' + showTime()
+    </script>
+</body>
+</html> 

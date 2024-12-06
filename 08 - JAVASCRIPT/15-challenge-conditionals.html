@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15-challenge</title>
+    <link rel="stylesheet" href="css/master.css">
+</head>
+<style>
+
+        section div.query {
+            align-items: center;
+            border: 4px solid red;
+            margin: 0 auto;
+            width: 260px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+
+            input {
+                background-color: #f0db4f;
+                border: 2px solid #fff;
+                padding: 0.2rem;
+                border-radius: 10px;
+                transition: background-color 0.4s ease-in;
+                font-family: 'Poppings';
+                width: 200px;
+
+                &:focus {
+                    background-color: #fff6;
+                }
+            }
+
+            h5 {
+                margin: 0;
+                font-size: 1rem;
+            }
+
+            button {
+                background-color: #0009;
+                border-radius: 8px;
+                border: none;
+                color: #fff;
+                cursor: pointer;
+                font-family: 'Poppings';
+                font-size: 0.8rem;
+                padding: 0.5rem;
+                transition: background-color 0.4s ease-in;
+                width: 200px;
+
+                &:hover {
+                    background-color: #000c;
+                }
+            }
+        }
+
+        section h4 {
+            font-size: 4rem;
+            text-align: center;
+            margin: 0;
+        }
+
+        section img.icon {
+            zoom: 3;
+            width: 200px;
+            margin: 0 auto;
+        }
+
+</style>
+<body>
+    <nav class="controls">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fafafa" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        </a>
+    </nav>
+    <main>
+        <header>
+            <h1>CHALLENGE</h1>
+            <h2>Widget app clima</h2>
+        </header>
+        <section>
+            <div class="query">
+                <h5>Type City:</h5>
+                <input type="text">
+                <button>Show</button>
+            </div>
+            <h4 class="country"></h4>
+            <h4 class="temp"></h4>
+            <img src="" alt="Icon" class="icon">
+       </section>
+    </main>
+    <script>
+          // Elements
+          const query = document.querySelector('.query input')
+        const show = document.querySelector('.query button')
+        let q = 'Manizales'
+
+        // Events
+        show.addEventListener('click', (e) => {
+            e.preventDefault()
+            if (query.value != '') {
+                q = query.value
+                loadWeather(q)
+            }
+        })
+
+
+        const temp = document.querySelector('.temp');
+        const icon = document.querySelector('.icon');
+        const country = document.querySelector('.country')
+
+        const loadWeather = async (q) => {
+            const url = 'https://api.weatherapi.com/v1/current.json?key=7104adb94ff0457e99b153751241511&q='+q
+            const response = await fetch(url)
+            const data = await response.json()
+            country.textContent = data.location.country
+            temp.textContent = data.current.temp_c
+            icon.setAttribute('src', data.current.condition.icon)
+            //console.log(data.current.temp_c)
+        }
+        loadWeather(q)
+
+    </script>
+</body>
+</html>

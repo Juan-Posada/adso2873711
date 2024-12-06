@@ -1,0 +1,27 @@
+body{
+    background: url(../images/vehicle/bg-body.svg);
+}
+
+nav.controls {
+    position: fixed;
+    a:is(:link, :visited) {
+        border-radius: 70px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        background-color: #0009;
+        height: 40px;
+        transform: scale(0.8);
+        opacity: 0.6;
+        padding: 10px;
+        width: 40px;
+        transition: all 0.4s ease-in;
+    }
+    a:is(:hover) {
+        opacity: 1;
+        transform: scale(.9);
+    }
+    svg {
+        width: 40px;
+    }
+}

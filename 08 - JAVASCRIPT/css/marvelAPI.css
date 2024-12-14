@@ -13,6 +13,10 @@ body{
     height: 100%;
 }
 
+body:hover{
+    cursor: cell;
+}
+
 nav.controls {
     position: fixed;
     a:is(:link, :visited) {
@@ -73,16 +77,24 @@ div.buttonWelcome{
     display: flex;
     justify-content: center;
     align-items: start;
-    button.welcome{
-        font-family: BentonSans ExtraComp;
-        width: 220px;
-        height: 70px;
-        background-color: #130B3F;
-        border: none;
-        font-size: 20px;
-        color: white;
-        border-radius: 8px;
-    }
+    
+}
+
+button.welcome{
+    font-family: BentonSans ExtraComp;
+    width: 220px;
+    height: 70px;
+    background-color: #130B3F;
+    border: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 8px;
+    transition: all ease-in .4s;
+}
+
+button.welcome:hover{
+    scale: 1.1;
+    cursor: pointer;
 }
 
 div.control{
@@ -94,7 +106,7 @@ div.control{
     button.back{
         margin-left: 20px;
         background-color: #ffffff00;
-        border: 2px solid #130B3F;
+        border: 2px solid #1d115f;
         border-radius: 8px;
         height: 35px;
         width: 35px;
@@ -105,6 +117,7 @@ div.control{
     }
     button.back:hover{
         scale: 1.1;
+        cursor: pointer;
     }
 }
 
@@ -138,6 +151,10 @@ div.box{
     display: flex;
     justify-content: center;
     color: white;
+}
+
+div.box:hover{
+    cursor: pointer;
 }
 
 
@@ -196,6 +213,10 @@ div.imgTwo{
         width: 170px;
         height: 170px;
         border-radius: 2px;
+        transition: all .2s ease-in;
+    }
+    img:hover{
+        scale: 1.1;
     }
 }
 

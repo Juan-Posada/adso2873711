@@ -1,0 +1,221 @@
+@font-face {
+    font-family: BentonSans ExtraComp;
+    src: url(../fonts/marvel.otf);
+}
+
+html{
+    height: 98%;
+}
+
+body{
+    font-family: BentonSans ExtraComp;
+    background: url(../images/marvelAPI/bg-container.png);
+    height: 100%;
+}
+
+nav.controls {
+    position: fixed;
+    a:is(:link, :visited) {
+        border-radius: 70px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        background-color: #0009;
+        height: 40px;
+        transform: scale(0.8);
+        opacity: 0.6;
+        padding: 10px;
+        width: 40px;
+        transition: all 0.4s ease-in;
+    }
+    a:is(:hover) {
+        opacity: 1;
+        transform: scale(1);
+    }
+    svg {
+        width: 40px;
+    }
+}
+
+main.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 2em;
+}
+
+div.contain{
+    height: 600px;
+    width: 350px;
+    border: 2px #0A0331 solid;
+    border-radius: 15px;
+    background: url(../images/marvelAPI/bg-div.png);
+}
+
+div.titleOne{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-size: 32px;
+    color: white;
+    height: 60%;
+    h1.marvel{
+        text-align: center;
+    }
+}
+
+div.buttonWelcome{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    button.welcome{
+        font-family: BentonSans ExtraComp;
+        width: 220px;
+        height: 70px;
+        background-color: #130B3F;
+        border: none;
+        font-size: 20px;
+        color: white;
+        border-radius: 8px;
+    }
+}
+
+div.control{
+    width: 100%;
+    height: 12%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    button.back{
+        margin-left: 20px;
+        background-color: #ffffff00;
+        border: 2px solid #130B3F;
+        border-radius: 8px;
+        height: 35px;
+        width: 35px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.2s ease-in ;
+    }
+    button.back:hover{
+        scale: 1.1;
+    }
+}
+
+div.titleInfo{
+    width: 100%;
+    height: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-size: 28px;
+    color: white;
+    h1.marvelTwo{
+        text-align: center;
+    }
+}
+
+div.boxContain{
+    width: 100%;
+    height: 59%;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+div.box{
+    height: 150px;
+    width: 250px;
+    border: 3px solid #130B3F;
+    border-radius: 5px;
+    margin-left: 14%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+
+
+div.for{
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.img{
+    width: 100px;
+    height: 100px;
+    border: 4px solid #130B3F;
+    background-color: #130b3fbe;
+    border-radius: 2px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    img{
+        width: 90px;
+        height: 90px;
+        border-radius: 2px;
+    }
+}
+
+div.info{
+    width: 100px;
+    height: 115px;
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+div.insider{
+    width: 100%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+div.imgTwo{
+    width: 200px;
+    height: 200px;
+    border: 4px solid #130B3F;
+    background-color: #130b3fbe;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    img{
+        width: 170px;
+        height: 170px;
+        border-radius: 2px;
+    }
+}
+
+div.infoTwo{
+    width: 200px;
+    height: 215px;
+    border: 4px solid #130B3F;
+    border-radius: 3px;
+    width: 200px;
+    height: 125px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    font-size: 15px;
+    color: white;
+    font-weight: 300;
+    h2{
+        margin-left: 10px;
+    }
+    p{
+        margin-left: 10px;
+    }
+}

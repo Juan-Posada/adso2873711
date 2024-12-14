@@ -1,6 +1,6 @@
 const marvel = {
     render: () => {
-        const urlAPI = 'https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=251374e9774eb2e0a1c7f6b4b252009d&hash=0bf4e8a1878a49a40706ded12a9f4818&limit=130';
+        const urlAPI = 'https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=251374e9774eb2e0a1c7f6b4b252009d&hash=0bf4e8a1878a49a40706ded12a9f4818&limit=100';
         const container = document.querySelector('#boxContain');
         const imgTwo = document.querySelector('.imgTwo'); // Contenedor de la imagen del personaje seleccionado
         const infoTwo = document.querySelector('.infoTwo'); // Contenedor de la información del personaje seleccionado

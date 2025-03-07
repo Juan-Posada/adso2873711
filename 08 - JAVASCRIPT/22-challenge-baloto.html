@@ -106,11 +106,9 @@
 
         
         function contadorBalotasMenores() {
-            // Array para rastrear números usados
             let usedNumbers = [];
 
-            // Array de elementos globo (excluyendo globo-x)
-            const balotas = [
+            const balotasMenores = [
                 { img: document.querySelector('#globo-a'), container: document.querySelector('.globo-a') },
                 { img: document.querySelector('#globo-b'), container: document.querySelector('.globo-b') },
                 { img: document.querySelector('#globo-c'), container: document.querySelector('.globo-c') },
@@ -118,27 +116,26 @@
                 { img: document.querySelector('#globo-e'), container: document.querySelector('.globo-e') }
             ];
 
-            // Esperar a que terminen las animaciones antes de mostrar números
+            
             setTimeout(() => {
-                // Generar números para cada balota
-                balotas.forEach(balota => {
+                
+                balotasMenores.forEach(balota => {
                     let randomNum;
-                    // Seguir generando hasta obtener un número que no se ha usado
+                    
                     do {
                         randomNum = Math.floor(Math.random() * 43) + 1; // 1-43
                     } while (usedNumbers.includes(randomNum));
 
-                    // Añadir a la lista de números usados
+                    
                     usedNumbers.push(randomNum);
 
-                    // Crear un elemento número
+                    
                     const numberElement = document.createElement('div');
                     numberElement.textContent = randomNum;
                     numberElement.classList.add('balloon-number');
 
-                    // Estilos para el número (posicionamiento absoluto dentro del contenedor del globo)
                     numberElement.style.position = 'absolute';
-                    numberElement.style.fontSize = '20px';
+                    numberElement.style.fontSize = '22px';
                     numberElement.style.fontWeight = 'lighter';
                     numberElement.style.color = 'white';
                     numberElement.style.zIndex = '100';
@@ -147,24 +144,67 @@
                     numberElement.style.transform = 'translate(-50%, -50%)';
                     numberElement.style.marginTop = '10px';
 
-                    // Hacer que el contenedor del globo tenga posición relativa
+
                     balota.container.style.position = 'relative';
 
-                    // Eliminar número anterior (si existe)
+                    
                     const existingNumber = balota.container.querySelector('.balloon-number');
                     if (existingNumber) {
                         existingNumber.remove();
                     }
 
-                    // Añadir el número al contenedor del globo
+                    
                     balota.container.appendChild(numberElement);
                 });
-            }, 3200); // Esperar a que terminen las animaciones (ajustar tiempo según necesidad)
+            }, 4900); 
         }
+
+        function contadorBalotaMayor() {
+            setTimeout(() => {
+                
+                const balotaMayor = {
+                    img: document.querySelector('#globo-x'),
+                    container: document.querySelector('.globo-x')
+                };
+    
+                
+                const randomNum = Math.floor(Math.random() * 9) + 1; // 1-9
+    
+    
+                const numberElement = document.createElement('div');
+                numberElement.textContent = randomNum;
+                numberElement.classList.add('balloon-number-x');
+    
+                
+                numberElement.style.position = 'absolute';
+                numberElement.style.fontSize = '28px';
+                numberElement.style.fontWeight = 'lighter';
+                numberElement.style.color = 'white';
+                numberElement.style.zIndex = '100';
+                numberElement.style.top = '50%';
+                numberElement.style.left = '50%';
+                numberElement.style.transform = 'translate(-50%, -50%)';
+                numberElement.style.marginTop = '5px';
+                numberElement.style.textDecoration = 'underline';
+    
+                
+                balotaMayor.container.style.position = 'relative';
+    
+                
+                const existingNumber = balotaMayor.container.querySelector('.balloon-number-x');
+                if (existingNumber) {
+                    existingNumber.remove();
+                }
+    
+                
+                balotaMayor.container.appendChild(numberElement);
+            }, 4900);
+        }
+
 
         function removeNumbers() {
             // Remove all balloon numbers
-            const numbers = document.querySelectorAll('.balloon-number');
+            const numbers = document.querySelectorAll('.balloon-number, .balloon-number-x');
             numbers.forEach(number => number.remove());
         }
 
@@ -174,6 +214,9 @@
             animacionGlobosUp();
             lanzarConfettiUp();
             contadorBalotasMenores();
+            contadorBalotaMayor();
+            upButton.disabled = true;
+            downButton.disabled = false;
 
         });
 
@@ -182,7 +225,8 @@
             resetGlobos();
             lanzarConfettiExplote();
             removeNumbers();
-
+            upButton.disabled = false;
+            downButton.disabled = true;
         });
 
 

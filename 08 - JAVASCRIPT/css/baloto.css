@@ -72,7 +72,6 @@ div.globos{
     width: 100%;
     height: 29%;
     position: relative;
-
 }
 div.arriba{
     width: 100%;
@@ -80,7 +79,6 @@ div.arriba{
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 div.globo-x{
     width:33%;
@@ -230,3 +228,4 @@ div.button-up{
 .explote-animation {
     animation: floatExplote .1s ease-out forwards;
 }
+

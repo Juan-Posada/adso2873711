@@ -2,7 +2,7 @@
     "liveServer.settings.port": 5501,
     "editor.fontLigatures": true,
     "files.autoSave": "afterDelay",
-    "editor.fontSize": 14,
+    "editor.fontSize": 12,
     "editor.fontFamily": "'Dank Mono'",
     "editor.fontVariations": true
 }

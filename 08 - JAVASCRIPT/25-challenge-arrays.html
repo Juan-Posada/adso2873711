@@ -70,9 +70,6 @@
                                 <div class="button-first">
                                     <button class="direct-actions" id="first">
                                         <p>First</p>
-                                        <?php
-                                    
-                                        ?>
                                     </button>
                                 </div>
                                 <div class="button-last">
@@ -95,14 +92,14 @@
                             </div>
                             <div class="down">
                                 <div class="button-input">
-                                    <input type="number" name="numPosition" id="numPosition" max="9" min="1">
+                                    <input type="number" name="numPosition" id="numPosition" max="9" min="1" placeholder="position">
                                 </div>
                             </div>
                         </div>
                         <div class="final">
                             <div class="final-button">
                                 <button class="final-action" id="final">
-                                    <p>+</p>
+                                    <p></p>
                                 </button>
                             </div>
                         </div>
@@ -152,5 +149,181 @@
             </div>
         </section>
     </main>
+    <script>
+        // Botones
+        const buttonFirst       = document.querySelector('#first')
+        const buttonLast        = document.querySelector('#last')
+        const buttonAdd         = document.querySelector('#add')
+        const buttonRemove      = document.querySelector('#remove')
+        const inputNumber       = document.querySelector('#numPosition')
+        const finalActionButton = document.querySelector('#final')
+
+
+        // Imagenes
+        const imgPico    = document.querySelector('#pico')
+        const imgSword   = document.querySelector('#sword')
+        const imgAche    = document.querySelector('#ache')
+        const imgIron    = document.querySelector('#iron')
+        const imgEmerald = document.querySelector('#emerald')
+        const imgDiamond = document.querySelector('#diamond')
+        const imgEnder   = document.querySelector('#ender')
+        const imgElytras = document.querySelector('#elytras')
+        const imgEye     = document.querySelector('#eye')
+        const itemImages = [imgPico, imgSword, imgAche, imgIron, imgEmerald, imgDiamond, imgEnder, imgElytras, imgEye]
+
+        itemImages.forEach(img => {
+            img.addEventListener('click', () => {
+                itemSelccionado = img
+                mostrarItemSeleccionado(img)
+            })
+        })
+
+
+        //Posiciones
+        const boxResult = document.querySelector('.box-result')
+
+
+        // Variables
+        let inventoryArray  = []
+        let itemSelccionado = null
+        let posicionActual  = ''
+        let accionActual    = ''
+
+
+        //Funciones
+        function actualizarVistaInventario() {
+            const positions = document.querySelectorAll('.positions')
+            positions.forEach(position => {
+                position.innerHTML = ''
+            });
+
+            inventoryArray.forEach((item, index) => {
+                const posNames = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+                const position = document.querySelector(`#pos-${posNames[index]}`)
+                if (position) {
+                    const newImg = document.createElement('img')
+                    newImg.src = item.src
+                    newImg.alt = item.alt
+                    newImg.classList.add('inventory-item')
+                    position.appendChild(newImg)
+                }
+            })
+        }
+
+        function mostrarItemSeleccionado(item) {
+            boxResult.innerHTML = ''
+            // Crear nueva imagen en lugar de clonar
+            const newImg = document.createElement('img')
+            newImg.src = item.src
+            newImg.alt = item.alt
+            newImg.classList.add('selected-item')
+            boxResult.appendChild(newImg)
+        }
+
+        function actualizarBotonFinalTexto() {
+            finalActionButton.querySelector('p').textContent = accionActual === 'add' ? '+' : '-'
+        }
+
+        function añadirAlInventario(item, position) {
+            if (inventoryArray.length >= 9) return;
+        
+            if (position > 0 && position <= inventoryArray.length + 1 ) {
+                inventoryArray.splice(position - 1, 0, item)
+            } else if (posicionActual === 'first') {
+                inventoryArray.unshift(item)
+            } else {
+                inventoryArray.push(item)
+            }
+        }
+
+        function quitarDelInventario(position) {
+            if (inventoryArray.length === 0) return;
+            if (position > 0 && position <= inventoryArray.length) {
+                inventoryArray.splice(position - 1, 1)
+            } else if (posicionActual === 'first') {
+                inventoryArray.shift()
+            } else {
+                inventoryArray.pop()
+            }
+        }
+
+        function manejoAccionFinal() {
+            if (!itemSelccionado) {
+                alert('Necesitas seleccionar un item primero')
+                return;
+            }
+        
+            if (accionActual === 'add' && inventoryArray.length >= 9) {
+                alert('El inventario está lleno. No puedes agregar más items.')
+                return
+            }
+        
+            let inputValue = inputNumber.value
+
+            if (inputValue === "") {
+                if (accionActual === 'add') {
+                    añadirAlInventario(itemSelccionado, 0)
+                } else {
+                    quitarDelInventario(0)
+                }
+            } else {
+                let position = parseInt(inputValue)
+
+                if (position > 0 && position <= (accionActual === 'add' ? inventoryArray.length + 1 : inventoryArray.length)) {
+                    if (accionActual === 'add') {
+                        añadirAlInventario(itemSelccionado, position)
+                    } else {
+                        quitarDelInventario(position)
+                    }
+                } else {
+                    if (accionActual === 'add') {
+                        añadirAlInventario(itemSelccionado, inventoryArray.length + 1)
+                    } else if (inventoryArray.length > 0) {
+                        quitarDelInventario(inventoryArray.length)
+                    }
+                }
+            }
+        
+            actualizarVistaInventario();
+            inputNumber.value = ""
+        }
+
+
+        // Botones
+        buttonFirst.addEventListener('click', () => {
+            buttonFirst.style.opacity = '1'
+            buttonLast.style.opacity = '0.5'
+            posicionActual = 'first'
+            actualizarBotonFinalTexto()
+        })
+
+        buttonLast.addEventListener('click', () => {
+            buttonLast.style.opacity = '1'
+            buttonFirst.style.opacity = '0.5'
+            posicionActual = 'last'
+            actualizarBotonFinalTexto();
+        });
+
+        buttonAdd.addEventListener('click', () => {
+            buttonAdd.style.opacity = '1'
+            buttonRemove.style.opacity = '0.5'
+            accionActual = 'add'
+            actualizarBotonFinalTexto()
+        });
+
+        buttonRemove.addEventListener('click', () => {
+            buttonAdd.style.opacity = '0.5'
+            buttonRemove.style.opacity = '1'
+            accionActual = 'remove'
+            actualizarBotonFinalTexto()
+        });
+
+        finalActionButton.addEventListener('click', function(){
+            manejoAccionFinal()
+        });
+
+        actualizarBotonFinalTexto();
+
+        </script>
 </body>
 </html>

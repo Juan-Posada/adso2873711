@@ -1,0 +1,31 @@
+{
+    "songs": [
+        {
+            "id": 1,
+            "title": "RLNDT",
+            "artist": "Bad Bunny",
+            "album": "x100pre",
+            "year": 2018,
+            "cover": "images/mp3player/x100pre.webp",
+            "song": "mp3/RLNDT.mp3"
+        },
+        {
+            "id": 2,
+            "title": "Dos Mil 16",
+            "artist": "Bad Bunny",
+            "album": "Un Verano Sin Ti",
+            "year": 2022,
+            "cover": "images/mp3player/uvst.webp",
+            "song": "mp3/dos_mil_16.mp3"
+        },
+        {
+            "id": 3,
+            "title": "A Tu Merced",
+            "artist": "Bad Bunny",
+            "album": "YHLQMDLG",
+            "year": 2020,
+            "cover": "images/mp3player/YHLQMDLG.webp",
+            "song": "mp3/a_tu_merced.mp3"
+        }
+    ]
+}

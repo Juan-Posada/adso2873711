@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>32-animation-frame</title>
+    <link rel="stylesheet" href="css/master.css">
+    <style>
+        section{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        div.zombie{
+            width: 350px;
+            height: 350px;
+            background: url(images/animation.png);
+            margin-top: 30px;
+        }
+        button {
+            background-color: #d8c33c;
+            border-radius: 5px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            padding: 0.6rem;
+            width: 90px;
+            margin: 2rem auto;
+            transition: .2s all ease-in-out;
+        }
+        button:hover{
+            scale: 1.1;
+            margin: 2rem 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="controls">
+        <a href="index.html">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#fafafa" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+        </a>
+    </nav>
+    <main>
+        <header>
+            <h1>ANIMATION FRAME</h1>
+            <h2>Animaciones por medio de imagenes con distintos frames en diferentes posiciones</h2>
+        </header>
+        <section>
+            <div class="zombie">
+
+            </div>
+            <div class="buttons">
+                <button class="aparecer">Aparecer</button>
+                <button class="estatico">Estático</button>
+                <button class="caminar">Caminar</button>
+            </div>
+        </section>
+    </main>
+    <script>
+        // Elements
+        const aparecer = document.querySelector('.aparecer')
+        const estatico = document.querySelector('.estatico')
+        const caminar  = document.querySelector('.caminar')
+        const zombie   = document.querySelector('.zombie')
+
+        // Sprite Config
+        const anchoFrame = 350
+        let totalFrames  = 11
+        let fps          = 8
+        let frameActual  = 0
+        let ultimoFrame  = 0
+
+        // Events 
+        aparecer.addEventListener('click', (e) => {
+            fps = 8
+            totalFrames = 11
+            zombie.style.backgroundPositionY = '0px'
+        })
+        // Events 
+        estatico.addEventListener('click', (e) => {
+            fps = 8
+            totalFrames = 6
+            zombie.style.backgroundPositionY = '-350px'
+        })
+        // Events 
+        caminar.addEventListener('click', (e) => {
+            fps = 8
+            totalFrames = 10
+            zombie.style.backgroundPositionY = '-700px'
+        })
+
+        // Functions
+        function animarZombie(timestamp) {
+            if (timestamp - ultimoFrame > 1000 / fps) {
+                zombie.style.backgroundPositionX = `-${frameActual * anchoFrame}px`
+                frameActual = (frameActual + 1) % totalFrames
+                ultimoFrame = timestamp
+            }
+            requestAnimationFrame(animarZombie)
+        }
+
+        requestAnimationFrame(animarZombie)
+    </script>
+</body>
+</html>

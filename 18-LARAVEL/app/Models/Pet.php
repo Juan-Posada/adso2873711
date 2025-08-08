@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Pet extends Model
 {
-    use HasFactory, Notifiable;
-    /**
+    use HasFactory;
+
+     /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
@@ -23,6 +23,12 @@ class Pet extends Model
         'breed',
         'location',
         'description',
+        'active',
         'status'
     ];
+
+    // Relationship: Pet hasOne Adoption
+    public function adoption() {
+        return $this->hasOne(Adoption::class);
+    }
 }

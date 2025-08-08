@@ -22,6 +22,7 @@ class UserSeeder extends Seeder
         $user->fullname  = 'Anthony Edward Stark';
         $user->gender    = 'Male';
         $user->birthdate = '1970-05-29';
+        $user->photo     = 'images/tony-strak.jpg';
         $user->phone     = '(+57) - '.'3102456789';
         $user->email     = 'stark@example.com';
         $user->password  = bcrypt('admin');
